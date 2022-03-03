@@ -108,12 +108,8 @@ view: order_items {
   set: detail {
     fields: [
       id,
-      users.last_name,
-      users.id,
-      users.first_name,
-      inventory_items.id,
-      inventory_items.product_name,
-      orders.order_id
+      status,
+      user_id
     ]
   }
 }
