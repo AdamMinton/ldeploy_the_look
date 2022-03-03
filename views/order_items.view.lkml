@@ -1,6 +1,5 @@
 view: order_items {
-  sql_table_name: `looker-private-demo.thelook.order_items`
-    ;;
+  sql_table_name: `looker-private-demo.thelook.order_items`;;
   drill_fields: [id]
 
   dimension: id {
@@ -85,6 +84,11 @@ view: order_items {
   }
 
   dimension: status {
+    label: "Testing String
+    {% if _user_attributes['last_name']=='Minton' %}
+    Hi
+    {% else %} Hi2
+    {%endif%}"
     type: string
     sql: ${TABLE}.status ;;
   }
