@@ -84,11 +84,10 @@ view: order_items {
   }
 
   dimension: status {
-    label: "Testing String
-    {% if _user_attributes['last_name']=='Minton' %}
-    Hi
-    {% else %} Hi2
-    {%endif%}"
+    label: "{% if _user_attributes['last_name'] == '106' %} Buyer Member ID Macro
+    {% elsif _user_attributes['last_name'] == '111' %} Inventory Source Name
+    {% elsif _user_attributes['last_name'] == '201' %} Auction Device Make
+    {% else %} Custom  Name  9 {% endif %}"
     type: string
     sql: ${TABLE}.status ;;
   }
