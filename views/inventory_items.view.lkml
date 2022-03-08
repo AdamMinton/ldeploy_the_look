@@ -1,6 +1,5 @@
 view: inventory_items {
-  sql_table_name: `looker-private-demo.thelook.inventory_items`
-    ;;
+  sql_table_name: `looker-private-demo.thelook.inventory_items`;;
   drill_fields: [id]
 
   dimension: id {

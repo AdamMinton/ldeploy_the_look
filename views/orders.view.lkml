@@ -1,6 +1,5 @@
 view: orders {
-  sql_table_name: `looker-private-demo.thelook.orders`
-    ;;
+  sql_table_name: `looker-private-demo.thelook.orders`;;
   drill_fields: [order_id]
 
   dimension: order_id {

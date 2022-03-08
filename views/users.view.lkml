@@ -1,6 +1,5 @@
 view: users {
-  sql_table_name: `looker-private-demo.thelook.users`
-    ;;
+  sql_table_name: `looker-private-demo.thelook.users`;;
   drill_fields: [id]
 
   dimension: id {

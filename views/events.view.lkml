@@ -1,6 +1,5 @@
 view: events {
-  sql_table_name: `looker-private-demo.thelook.events`
-    ;;
+  sql_table_name: `looker-private-demo.thelook.events`;;
   drill_fields: [id]
 
   dimension: id {

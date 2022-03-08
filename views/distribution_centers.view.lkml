@@ -1,6 +1,5 @@
 view: distribution_centers {
-  sql_table_name: `looker-private-demo.thelook.distribution_centers`
-    ;;
+  sql_table_name: `looker-private-demo.thelook.distribution_centers`;;
   drill_fields: [id]
 
   dimension: id {
