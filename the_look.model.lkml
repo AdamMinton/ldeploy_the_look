@@ -1,4 +1,4 @@
-connection: "aminton_sandbox_ps"
+connection: "ldeploy_the_look"
 
 include: "/views/*"
 
