@@ -1,8 +1,8 @@
 view: products {
   sql_table_name: `looker-private-demo.thelook.products`;;
-  drill_fields: [id]
 
   dimension: id {
+    hidden: yes
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
@@ -29,9 +29,9 @@ view: products {
   }
 
   dimension: distribution_center_id {
-    type: string
-    # hidden: yes
-    sql: ${TABLE}.distribution_center_id ;;
+    hidden: yes
+    type: number
+    sql: CAST(${TABLE}.distribution_center_id as INT64);;
   }
 
   dimension: name {
@@ -47,10 +47,11 @@ view: products {
   dimension: sku {
     type: string
     sql: ${TABLE}.sku ;;
+    required_fields: [id]
   }
 
-  measure: count {
+  measure: count_of_products {
+    alias: [count]
     type: count
-    drill_fields: [id, name, distribution_centers.name, distribution_centers.id, inventory_items.count]
   }
 }
