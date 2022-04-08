@@ -1,6 +1,5 @@
 view: order_items {
   sql_table_name: `looker-private-demo.thelook.order_items`;;
-  drill_fields: [id]
 
   dimension: id {
     primary_key: yes
@@ -38,14 +37,13 @@ view: order_items {
   }
 
   dimension: inventory_item_id {
+    hidden: yes
     type: number
-    # hidden: yes
     sql: ${TABLE}.inventory_item_id ;;
   }
 
   dimension: order_id {
     type: number
-    # hidden: yes
     sql: ${TABLE}.order_id ;;
   }
 
@@ -89,27 +87,36 @@ view: order_items {
   }
 
   dimension: user_id {
+    hidden: yes
     type: number
-    # hidden: yes
     sql: ${TABLE}.user_id ;;
   }
 
-  measure: count {
+  measure: count_of_items {
+    alias: [count]
     type: count
+    drill_fields: [detail*]
+  }
+
+  measure: count_of_orders {
+    type: count_distinct
+    sql: ${order_id} ;;
     drill_fields: [detail*]
   }
 
   measure: total_sales {
     type: sum
     sql: ${sale_price} ;;
+    drill_fields: [detail*]
   }
 
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
+      order_id,
       id,
       status,
-      user_id
+      total_sales
     ]
   }
 }

@@ -29,42 +29,49 @@ view: inventory_items {
   }
 
   dimension: product_brand {
+    hidden: yes
     type: string
     sql: ${TABLE}.product_brand ;;
   }
 
   dimension: product_category {
+    hidden: yes
     type: string
     sql: ${TABLE}.product_category ;;
   }
 
   dimension: product_department {
+    hidden: yes
     type: string
     sql: ${TABLE}.product_department ;;
   }
 
   dimension: product_distribution_center_id {
+    hidden: yes
     type: number
     sql: ${TABLE}.product_distribution_center_id ;;
   }
 
   dimension: product_id {
+    hidden: yes
     type: number
-    # hidden: yes
     sql: ${TABLE}.product_id ;;
   }
 
   dimension: product_name {
+    hidden: yes
     type: string
     sql: ${TABLE}.product_name ;;
   }
 
   dimension: product_retail_price {
+    hidden: yes
     type: number
     sql: ${TABLE}.product_retail_price ;;
   }
 
   dimension: product_sku {
+    hidden: yes
     type: string
     sql: ${TABLE}.product_sku ;;
   }
@@ -83,8 +90,9 @@ view: inventory_items {
     sql: ${TABLE}.sold_at ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [id, product_name, products.name, products.id, order_items.count]
+  measure: total_cost {
+    type: sum
+    sql: ${cost} ;;
   }
+
 }

@@ -1,8 +1,8 @@
 view: users {
   sql_table_name: `looker-private-demo.thelook.users`;;
-  drill_fields: [id]
 
   dimension: id {
+    hidden: yes
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
@@ -59,13 +59,21 @@ view: users {
   }
 
   dimension: latitude {
+    hidden: yes
     type: number
     sql: ${TABLE}.latitude ;;
   }
 
   dimension: longitude {
+    hidden: yes
     type: number
     sql: ${TABLE}.longitude ;;
+  }
+
+  dimension: location {
+    type: location
+    sql_latitude: ${latitude} ;;
+    sql_longitude: ${longitude} ;;
   }
 
   dimension: state {
