@@ -8,6 +8,18 @@ view: products {
     sql: ${TABLE}.id ;;
   }
 
+#iml
+  dimension: brand_filter {
+    type: string
+    sql:
+        CASE
+          WHEN ${TABLE}.brand  = 'Columbia'
+            OR ${TABLE}.brand  = '106Shades'
+            OR ${TABLE}.brand  = 'AxParis'THEN  ${TABLE}.brand
+          ELSE null
+        END ;;
+  }
+
   dimension: brand {
     type: string
     sql: ${TABLE}.brand ;;

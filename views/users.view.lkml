@@ -1,6 +1,61 @@
 view: users {
   sql_table_name: `looker-private-demo.thelook.users`;;
 
+  #sql_table_name:
+  #{% if ${test} < 10 %}
+   #  `looker-private-demo.thelook.users`
+  #{% else %}
+   #`looker-private-demo.thelook.users`
+  #{% endif %} ;;
+
+#iml
+  filter: as_of_date {
+    label: "as_of_date (try: today. or: 2018/01/01)"
+    type: date
+    default_value:"yesterday"
+    sql: ${created_date};;
+
+    hidden: no
+  }
+
+  parameter: tablename {
+    type: unquoted
+    allowed_value: {
+      label: "derived table"
+      value: "derived table name"
+    }
+    allowed_value: {
+      label: "another table"
+      value: "schema.table_name"
+    }
+  }
+
+  measure: test {
+    type:  number
+    sql:  11 ;;
+  }
+
+  #iml
+  measure: top_axis {
+    type: number
+    sql: 1;;
+  }
+
+#iml
+  #sql_table_name: {% if table_chooser._parameter_value = '1' %}table1{% else %}table2{%endif%}
+
+#sql_table_name:
+ #   {% assign dateStart = start_date._parameter_value | date: '%s' %}
+  #  {% assign dateEnd = end_date._parameter_value | date: '%s' %}
+   # {% assign daysDiff = dateStart | minus: dateEnd  | divided_by: 3600 | divided_by: 24 %}
+    #{% if daysDiff > 2 %}
+    #`looker-private-demo.thelook.users`
+    #{% else %}
+    #from XXXXX_2 as table2
+    #{% endif %} ;;
+
+
+
   dimension: id {
     hidden: yes
     primary_key: yes
@@ -38,6 +93,17 @@ view: users {
     sql: ${TABLE}.created_at ;;
   }
 
+
+#iml
+  measure: cnt_Upstart_rate_check {
+    description: "number of upstart rate check"
+    type: count_distinct
+    sql:
+    CASE WHEN ${created_date} > CAST('2022-02-22' AS DATE)
+    THEN ${id}
+    END ;;
+  }
+
   dimension: email {
     type: string
     sql: ${TABLE}.email ;;
@@ -51,6 +117,7 @@ view: users {
   dimension: gender {
     type: string
     sql: ${TABLE}.gender ;;
+    drill_fields: [last_name]
   }
 
   dimension: last_name {
