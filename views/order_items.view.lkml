@@ -92,11 +92,19 @@ view: order_items {
     sql: ${TABLE}.user_id ;;
   }
 
-  dimension: name {
+  dimension: verticaltab {
 
     type: "string"
 
-    sql: "space\x0bspace" ;;
+    sql: "VerticalTab\x0bVerticalTab" ;;
+
+  }
+
+  dimension: verticaltab2 {
+
+    type: "string"
+
+    sql: "VerticalTab\vVerticalTab" ;;
 
   }
 
