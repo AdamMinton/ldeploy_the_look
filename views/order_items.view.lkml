@@ -92,6 +92,14 @@ view: order_items {
     sql: ${TABLE}.user_id ;;
   }
 
+  dimension: name {
+
+    type: "string"
+
+    sql: "space\x0bspace" ;;
+
+  }
+
   measure: count_of_items {
     alias: [count]
     type: count
