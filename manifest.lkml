@@ -1,1 +1,1 @@
-#aragonite: yes
+new_lookml_runtime: yes
