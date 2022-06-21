@@ -126,6 +126,23 @@ view: order_items {
     drill_fields: [detail*]
   }
 
+  measure: division_test_1 {
+    description: "uses a percentage_points_test_1 named_value_format"
+    type: number
+    sql: ${count_of_orders}/${count_of_items} ;;
+    # value_format_name: test
+    value_format_name: percentage_points_test_1
+  }
+
+  measure: division_test_2 {
+    description: "uses a test named_value_format"
+    type: number
+    sql: ${count_of_orders}/${count_of_items} ;;
+    value_format_name: test
+    # value_format_name: percentage_points_test_1
+  }
+
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
