@@ -28,4 +28,18 @@ view: order_id_list {
     }
   }
 
+  dimension: adjustment_id_list_liquid_html_link_original {
+    type: string
+    sql: ${order_id_list} ;;
+    html: {% assign words = value | split: ', ' %} <ul> {% for word in words %} <li>{{ word }}</li> {% endfor %};;
+    link: {
+      label: "{% assign words = value | split: ', ' %}{% if words[0] %}Order Info for {{ words[0] }}"
+      url: "{% assign words = value | split: ', ' %}https://gcplmaster.dev.looker.com/explore/ldeploy_the_look/order_items?fields=order_items.id&f[order_items.id]={{ words[0] }}&limit=500"
+    }
+    link: {
+      label: "{% assign words = value | split: ', ' %}{% if words[1] %}Order Info for {{ words[1] }}"
+      url: "{% assign words = value | split: ', ' %}https://gcplmaster.dev.looker.com/explore/ldeploy_the_look/order_items?fields=order_items.id&f[order_items.id]={{ words[1] }}&limit=500"
+    }
+  }
+
 }
