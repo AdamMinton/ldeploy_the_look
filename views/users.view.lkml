@@ -18,6 +18,11 @@ view: users {
     sql: ${TABLE}.city ;;
   }
 
+  dimension: popular_cities {
+    type: yesno
+    sql: ${city} IN ('Albuquerque', 'Arlington', 'Aurora', 'Austin', 'Baltimore', 'Boston', 'Charlotte', 'Chicago', 'Cleveland', 'Colorado Springs', 'Columbus', 'Dallas', 'Denver', 'Detroit', 'Fresno', 'Houston', 'Jacksonville', 'Kansas City', 'Las Vegas', 'Los Angeles', 'Madison', 'Memphis', 'Mesa', 'Milwaukee', 'New York', 'Oakland', 'Oklahoma City', 'Philadelphia', 'Phoenix', 'Portland', 'Sacramento', 'San Antonio', 'San Diego', 'San Francisco', 'San Jose', 'Seattle', 'Springfield', 'Tucson', 'Virginia Beach', 'Washington') ;;
+  }
+
   dimension: country {
     type: string
     map_layer_name: countries
