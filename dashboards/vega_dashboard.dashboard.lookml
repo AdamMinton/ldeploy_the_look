@@ -2260,3 +2260,5 @@
     col: 0
     width: 13
     height: 15
+  embed_style:
+    show_title: false
