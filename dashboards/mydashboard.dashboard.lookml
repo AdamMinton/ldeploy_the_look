@@ -1,5 +1,5 @@
 - dashboard: mydashboard
-  title: My Dashboard
+  title:
   layout: newspaper
   preferred_viewer: dashboards-next
   elements:
