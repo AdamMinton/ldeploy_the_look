@@ -32,3 +32,5 @@
     col:
     width:
     height:
+  embed_style:
+     show_title: false
