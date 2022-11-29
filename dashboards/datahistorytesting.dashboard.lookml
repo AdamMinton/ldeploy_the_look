@@ -2,7 +2,8 @@
   title: Data History
   layout: newspaper
   preferred_viewer: dashboards-next
-  preferred_slug: fSLStlPZQ1cuFIl2P9YbvD
+  description: ''
+  preferred_slug: gFDG6nXUHnZbO7OEDiexWw
   elements:
   - title: Data History
     name: Data History
@@ -84,10 +85,10 @@
     series_types: {}
     listen:
       Is Disabled (Yes / No): user.is_disabled
-    row:
-    col:
-    width:
-    height:
+    row: 12
+    col: 0
+    width: 8
+    height: 6
   - title: New Tile
     name: New Tile (2)
     model: j_looker
@@ -126,10 +127,20 @@
     defaults_version: 1
     listen:
       Is Disabled (Yes / No): user.is_disabled
-    row:
-    col:
-    width:
-    height:
+    row: 12
+    col: 8
+    width: 8
+    height: 6
+  - name: ''
+    type: text
+    title_text: ''
+    subtitle_text: ''
+    body_text: '[{"type":"h1","children":[{"text":"This is a new tile"}],"align":"center"}]'
+    rich_content_json: '{"format":"slate"}'
+    row: 12
+    col: 16
+    width: 8
+    height: 6
   filters:
   - name: Is Disabled (Yes / No)
     title: Is Disabled (Yes / No)
