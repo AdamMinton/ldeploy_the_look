@@ -2,6 +2,10 @@ include: "/views/*"
 
 explore: order_items {
 
+  always_filter: {
+    filters: [order_items.status: "Complete"]
+  }
+
   join: users {
     type: left_outer
     sql_on: ${order_items.user_id} = ${users.id} ;;
