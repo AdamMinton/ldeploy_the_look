@@ -9,14 +9,6 @@ explore: average_session_duration_subject {hidden:yes}
 explore: sales_data {hidden:yes}
 explore: sales_data_latlong {hidden:yes}
 explore: usage_by_time_of_day {hidden:yes}
-explore: orders {}
-
-explore: orders_extended {
-  join: users {
-    sql_on: ${orders_extended.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
-}
 
 view: sample_1 {
 
