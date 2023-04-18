@@ -26,63 +26,63 @@ view: order_items {
 
 # The customized timeframes, organized in the Explore field picker under the group label Created
   dimension: date_formatted {
-    group_label: "LoBo Created content change test"
+    group_label: "LoBo Created type date_raw change test"
     type: date_raw
-    label: "Date"
+    label: "Date sql created_date"
     sql: ${created_date} ;;
     html: {{ rendered_value | date: "%b %d, %y" }};;
   }
 
   dimension: month_formatted_sqL_created_date {
-    group_label: "LoBo Created content change test"
+    group_label: "LoBo Created type date_raw change test"
     type: date_raw
-    label: "Month - created_date"
+    label: "Month sql created_date"
     sql: ${created_date} ;;
     html: {{ rendered_value | date: "%B %Y" }};;
   }
 
   dimension: month_formatted_sqL_created_month {
-    group_label: "LoBo Created content change test"
+    group_label: "LoBo Created type date_raw change test"
     type: date_raw
-    label: "Month - created_month"
+    label: "Month sql created_month"
     sql: ${created_month} ;;
     html: {{ rendered_value | date: "%B %Y" }};;
   }
 
   dimension: month_formatted_sqL_created_raw {
-    group_label: "LoBo Created content change test"
+    group_label: "LoBo Created type date_raw change test"
     type: date_raw
-    label: "Month - created_raw"
+    label: "Month sql created_raw"
     sql: ${created_raw} ;;
     html: {{ rendered_value | date: "%B %Y" }};;
   }
 
   dimension: week_formatted {
-    group_label: "LoBo Created content change test"
+    group_label: "LoBo Created type date_raw change test"
     type: date_raw
-    label: "Week"
+    label: "Week sql created_week"
     sql: ${created_week} ;;
     html: {{ rendered_value | date: "Week %U (%b %d)" }};;
   }
 
 # The customized timeframes, organized in the Explore field picker under the group label Created
   dimension: date_formatted_original_example {
-    group_label: "LoBo original Created example"
-    label: "Date"
+    group_label: "LoBo original Created no type date_raw example"
+    label: "Date sql created_date"
     sql: ${created_date} ;;
     html: {{ rendered_value | date: "%b %d, %y" }};;
   }
 
   dimension: month_formatted_original_example {
-    group_label: "LoBo original Created example"
-    label: "Month"
+    group_label: "LoBo original Created no type date_raw example"
+    label: "Month sql created_date"
     sql: ${created_date} ;;
     html: {{ rendered_value | date: "%B %Y" }};;
   }
 
   dimension: week_formatted_original_example {
-    group_label: "LoBo original Created example"
-    label: "Week"
+    group_label: "LoBo original Created no type date_raw example"
+    label: "Week sql created_date"
     sql: ${created_date} ;;
     html: {{ rendered_value | date: "Week %U (%b %d)" }};;
   }
