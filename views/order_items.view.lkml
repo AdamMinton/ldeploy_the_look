@@ -37,7 +37,7 @@ view: order_items {
     group_label: "LoBo Created content change test"
     type: date_raw
     label: "Month"
-    sql: ${created_month} ;;
+    sql: ${created_date} ;;
     html: {{ rendered_value | date: "%B %Y" }};;
   }
 
