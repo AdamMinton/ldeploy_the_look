@@ -36,7 +36,7 @@ view: order_items {
   dimension: month_formatted_sqL_created_date {
     group_label: "LoBo Created content change test"
     type: date_raw
-    label: "Month"
+    label: "Month - created_date"
     sql: ${created_date} ;;
     html: {{ rendered_value | date: "%B %Y" }};;
   }
@@ -44,9 +44,17 @@ view: order_items {
   dimension: month_formatted_sqL_created_month {
     group_label: "LoBo Created content change test"
     type: date_raw
-    label: "Month"
+    label: "Month - created_month"
     sql: ${created_month} ;;
-    html: {{ value | date: "%B %Y" }};;
+    html: {{ rendered_value | date: "%B %Y" }};;
+  }
+
+  dimension: month_formatted_sqL_created_raw {
+    group_label: "LoBo Created content change test"
+    type: date_raw
+    label: "Month - created_raw"
+    sql: ${created_raw} ;;
+    html: {{ rendered_value | date: "%B %Y" }};;
   }
 
   dimension: week_formatted {
