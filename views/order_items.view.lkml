@@ -33,7 +33,15 @@ view: order_items {
     html: {{ rendered_value | date: "%b %d, %y" }};;
   }
 
-  dimension: month_formatted {
+  dimension: month_formatted_sqL_created_date {
+    group_label: "LoBo Created content change test"
+    type: date_raw
+    label: "Month"
+    sql: ${created_date} ;;
+    html: {{ rendered_value | date: "%B %Y" }};;
+  }
+
+  dimension: month_formatted_sqL_created_month {
     group_label: "LoBo Created content change test"
     type: date_raw
     label: "Month"
