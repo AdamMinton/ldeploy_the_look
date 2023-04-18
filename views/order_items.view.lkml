@@ -24,6 +24,31 @@ view: order_items {
     sql: ${TABLE}.created_at ;;
   }
 
+# The customized timeframes, organized in the Explore field picker under the group label Created
+  dimension: date_formatted {
+    group_label: "LoBo Created test"
+    type: date_raw
+    label: "Date"
+    sql: ${created_date} ;;
+    html: {{ rendered_value | date: "%b %d, %y" }};;
+  }
+
+  dimension: month_formatted {
+    group_label: "LoBo Created test"
+    type: date_raw
+    label: "Month"
+    sql: ${created_month} ;;
+    html: {{ rendered_value | date: "%B %Y" }};;
+  }
+
+  dimension: week_formatted {
+    group_label: "LoBo Created test"
+    type: date_raw
+    label: "Week"
+    sql: ${created_week} ;;
+    html: {{ rendered_value | date: "Week %U (%b %d)" }};;
+  }
+
   dimension_group: delivered {
     type: time
     timeframes: [
