@@ -25,23 +25,6 @@ view: order_items {
   }
 
 # The customized timeframes, organized in the Explore field picker under the group label Created
-  dimension: date_formatted {
-    group_label: "Created"
-    label: "Date"
-    type: date_raw
-    sql: ${created_date} ;;
-    html: {{ rendered_value | date: "%b %d, %y" }};;
-  }
-
-  dimension: week_formatted {
-    group_label: "Created"
-    label: "Week"
-    type: date_raw
-    sql: ${created_week} ;;
-    html: {{ rendered_value | date: "Week %U (%b %d)" }};;
-  }
-
-# The customized timeframes, organized in the Explore field picker under the group label Created
   # dimension: date_formatted {
   #   group_label: "LoBo Created type date_raw change test"
   #   type: date_raw
