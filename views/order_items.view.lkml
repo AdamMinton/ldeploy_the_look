@@ -8,6 +8,7 @@ view: order_items {
   }
 
   dimension_group: created {
+    hidden:  no
     type: time
     timeframes: [
       raw,
@@ -22,6 +23,23 @@ view: order_items {
       year
     ]
     sql: ${TABLE}.created_at ;;
+  }
+
+# The customized timeframes, organized in the Explore field picker under the group label Created
+  dimension: date_formatted {
+    group_label: "Created"
+    label: "Date"
+    type: date_raw
+    sql: ${created_date} ;;
+    html: {{ rendered_value | date: "%b %d, %y" }};;
+  }
+
+  dimension: week_formatted {
+    group_label: "Created"
+    label: "Week"
+    type: date_raw
+    sql: ${created_week} ;;
+    html: {{ rendered_value | date: "Week %U (%b %d)" }};;
   }
 
 # The customized timeframes, organized in the Explore field picker under the group label Created
