@@ -8,7 +8,7 @@ view: order_items {
   }
 
   dimension_group: created {
-    hidden:  no
+    hidden:  yes
     type: time
     timeframes: [
       raw,
