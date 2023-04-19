@@ -8,6 +8,7 @@ view: order_items {
   }
 
   dimension_group: created {
+    group_label: "Craeted date"
     hidden:  yes
     type: time
     timeframes: [
@@ -27,7 +28,7 @@ view: order_items {
 
 # The customized timeframes, organized in the Explore field picker under the group label Created
   dimension: date_formatted {
-    group_label: "Created"
+    group_label: "Created date"
     label: "Date"
     type: date_raw
     sql: ${created_date} ;;
@@ -35,7 +36,7 @@ view: order_items {
   }
 
   dimension: week_formatted {
-    group_label: "Created"
+    group_label: "Created date"
     label: "Week"
     type: date_raw
     sql: ${created_week} ;;
