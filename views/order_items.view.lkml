@@ -192,6 +192,23 @@ view: order_items {
     drill_fields: [detail*]
   }
 
+
+  measure: total_orders_yoy_month {
+    type: period_over_period
+    based_on: count_of_orders
+    based_on_time: created_month
+    kind: previous
+    period: year
+  }
+
+  measure: total_orders_yoy_date {
+    type: period_over_period
+    based_on: count_of_orders
+    based_on_time: created_date
+    kind: previous
+    period: year
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [

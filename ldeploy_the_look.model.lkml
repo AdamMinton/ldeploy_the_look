@@ -1,4 +1,4 @@
-connection: "ldeploy_the_look"
+connection: "bigquery"
 
 include: "/explores/*"
 include: "/dashboards/*.dashboard.lookml"
